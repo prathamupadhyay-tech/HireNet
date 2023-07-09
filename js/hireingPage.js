@@ -81,7 +81,7 @@ const candidatesData = [
 let candidates = [];
 
 const searchLocation = document.querySelector("#searchLocation");
-const searchJob = document.querySelector("#searchLocation");
+const searchJob = document.querySelector("#searchJob");
 let locationValue;
 let jobValue;
 
@@ -89,26 +89,32 @@ document.addEventListener("DOMContentLoaded", function () {
   const searchParams = new URLSearchParams(window.location.search);
   locationValue = searchParams.get("location");
   jobValue = searchParams.get("jobTitle");
+  searchLocation.value = locationValue;
+  searchJob.value = jobValue;
   performSearch();
 });
 
 searchLocation.addEventListener("input", (e) => {
   locationValue = e.target.value.toLowerCase();
-  console.log(locationValue);
+  performSearch();
 });
 searchJob.addEventListener("input", (e) => {
   jobValue = e.target.value.toLowerCase();
-  console.log(jobValue);
+  performSearch();
 });
+
 const searchButton = document.querySelector("#searchButton");
 searchButton.addEventListener("click", performSearch);
 
 function performSearch() {
   const formattedLocationValue = locationValue
-    .toLowerCase()
-    .trim()
-    .replace(/\s+/g, "");
-  const formattedJobValue = jobValue.toLowerCase().trim().replace(/\s+/g, "");
+    ? locationValue.toLowerCase().trim().replace(/\s+/g, "")
+    : "";
+  const formattedJobValue = jobValue
+    ? jobValue.toLowerCase().trim().replace(/\s+/g, "")
+    : "";
+  console.log(formattedJobValue);
+  console.log(formattedLocationValue);
 
   candidates.forEach((candidate) => {
     const formattedCandidateLocation = candidate.location
@@ -120,8 +126,10 @@ function performSearch() {
     );
 
     const isVisible =
-      formattedCandidateLocation.includes(formattedLocationValue) ||
-      formattedCandidateJobPreferences.includes(formattedJobValue);
+      formattedCandidateLocation.includes(formattedLocationValue) &&
+      formattedCandidateJobPreferences.some((preference) =>
+        preference.includes(formattedJobValue)
+      );
 
     candidate.element.classList.toggle("hide", !isVisible);
   });
