@@ -1,0 +1,77 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+   
+    <link rel="stylesheet" href="./css/hireingPage.css">
+    <title>Document</title>
+</head>
+<body>
+    <div class="hireing-main-container">
+        <div class="hireing-wrapper">
+            <div class="candidates-container">
+                <h1>Find a candidate</h1>
+                <div class="input-bar">
+                    <div>
+                        <div class="location-icon"></div>
+                        <input type="text" id="searchLocation" placeholder=" Location ">
+        
+                    </div>
+                    
+                        <div class="linebreak"></div>
+                  
+                   
+                    <div>
+                        <div class="job-icon"></div>
+                        <input type="text" id="searchJob" placeholder="Job Title">
+                    </div>
+                   <div class="search-div">
+                    <button id="searchButton"></button>
+                   </div>
+                </div>
+                
+                
+            </div>
+            
+    
+            <div id="candidates-listing" candidate-holder>
+               <template class="candidates-template"  candidate-template>
+                <div class="candidates" >
+                    <div class="candidates-avatar"> </div>    
+                    <div class="candidates-info">
+                        <div>
+                            <p class="candidate-name" candidate-name></p>
+                            <p class="candidate-email" candidate-email ></p>
+                        </div>
+                       
+                        <div class="job-preferences" candidate-preference>
+                         
+                            
+                        </div>
+                        <div class="candidate-btns">
+                            <div class="candidate-resume">
+                                <div class="resume-icon"></div>
+                                Resume</div>
+                            <div class="candidate-contact"><div class="contact-icon"></div>Contact</div>
+                        </div>
+                        <div class="location-div">
+                            <img src="./imgs/location.png" class="location-icon"></img>
+                            <div class="candidate-location" candidate-location></div>
+                        </div>
+                       
+                    </div>
+                    
+    
+                </div> 
+               </template>
+             
+            </div>
+        </div>
+        
+    </div>
+   
+
+    <script src="./js/hireingPage.js"></script>
+</body>
+</html>
