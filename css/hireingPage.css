@@ -60,7 +60,7 @@
     align-items: center;
 }
 .location-icon{
-    background-image: url("./imgs/location.png");
+    background-image: url("../imgs/location.png");
     width: 20px;
     height: 20px;
     opacity: 0.5;
@@ -87,7 +87,7 @@
 
 }
 .job-icon{
-    background-image: url("./imgs/job.png");
+    background-image: url("../imgs/job.png");
     width: 20px;
     height: 20px;
     opacity: 0.5;
@@ -96,7 +96,7 @@
     background-size: contain;
 }
 #searchButton{
-    background-image: url("./imgs/search.png");
+    background-image: url("../imgs/search.png");
     width: 20px;
     height: 20px;
     border: none;
@@ -147,7 +147,7 @@
     padding: 1em;
 }
 .candidates-avatar{
-    background-image: url("./imgs/Avatar.png");
+    background-image: url("../imgs/Avatar.png");
     width: 5em;
     background-repeat: no-repeat;
     background-size: contain;
@@ -228,7 +228,7 @@
 .resume-icon{
     width: 1.5em;
     opacity: 0.5;
-    background-image: url("./imgs/cv.png");
+    background-image: url("../imgs/cv.png");
     background-position: center;
     background-repeat: no-repeat;
     background-size: contain;
@@ -238,7 +238,7 @@
 .contact-icon{
     width: 1.5em;
     opacity: 0.5;
-    background-image: url("./imgs/contact.png");
+    background-image: url("../imgs/contact.png");
     background-position: center;
     background-repeat: no-repeat;
     background-size: contain;
